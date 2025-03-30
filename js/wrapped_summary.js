@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         .attr("class", "summary-div");
                     
                     // hold img
-                    let img = '../img/album-placeholder.png';
+                    let img = 'img/album-placeholder.png';
                     if (!audioAttrsArtistSelectedImg) {
                         if (!globeTrackSelectedImg) {
                             if (!radialTrackSelectedImg) {
-                                img = '../img/album-placeholder.png';
+                                img = 'img/album-placeholder.png';
                             } else {
                                 img = radialTrackSelectedImg;
                             }

@@ -47,6 +47,11 @@ const years = [2017, 2018, 2019, 2020, 2021];
 // let projection be a global variable to be reused on updates
 let globeProjection;
 
+d3.select(".page-1")
+    .append("p")
+    .attr("id", "loading-message")
+    .text("Now Loading...");
+
 Promise.all(years.map(year =>
     d3.csv(`data/spotifytop50_${year}.csv`, row => {
         spotifyCountries[year].add(row.region);
@@ -59,6 +64,12 @@ Promise.all(years.map(year =>
     })
 )).then(() => {
     createIntroComponent("vis1", "Mapped  ", "Wrapped");
+
+    d3.select("#loading-message").remove();
+
+    d3.select(".page-1")
+        .append("span")
+        .text("Use your left and right arrow keys to navigate, or use the Previous and Next buttons below.");
 
     // default year and data
     selectedYear = '2017';

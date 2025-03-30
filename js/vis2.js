@@ -6,7 +6,7 @@ let data;
 
 let margin = { top: 40, right: 20, bottom: 30, left: 40 };
 
-const defaultImageUrl = "../img/album-placeholder.png"
+const defaultImageUrl = "img/album-placeholder.png"
 
 let leftArea;
 let trackImg;
@@ -52,11 +52,6 @@ let attrIcon = {
     "popularity": "crowd"
 };
 
-d3.select(".page-1")
-    .append("p")
-    .attr("id", "loading-message")
-    .text("Now Loading...");
-
 let allArtists = new Set();
 
 d3.csv("data/spotify600k.csv", (row) => {
@@ -81,12 +76,6 @@ d3.csv("data/spotify600k.csv", (row) => {
     return row;
 }).then((loadedData) => {
     //createIntroComponent("vis2", "Through the years:", "Audio Attributes");
-
-    d3.select("#loading-message").remove();
-
-    d3.select(".page-1")
-        .append("span")
-        .text("Use your left and right arrow keys to navigate, or use the Previous and Next buttons below.");
 
     data = loadedData;
 
