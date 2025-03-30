@@ -301,8 +301,7 @@ d3.csv("data/spotify600k.csv", row => {
                 }
                 
                 keySelected = key;
-                sessionStorage.setItem("keySelected", keyNotesPositions[key].note);
-                updateChart(key);
+                sessionStorage.setItem("keySelected", `${keyNotesPositions[key].note} ${keyMode ? 'Major' : 'Minor'}`);                updateChart(key);
             })
             .on('mouseover', function(event, d) {
                 // Make the hovered note stem, line through head, head, and sharp bright green
