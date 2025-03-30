@@ -63,10 +63,6 @@
 }
 
 #keys-row-notes {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; 
-    position: relative; */
     width: 100vw;
     height: 20vh;
 }
@@ -88,24 +84,27 @@
 
 
 #key-chart {
-    display: inline-block;    /* Ensures the chart is treated as a block element that can be centered */
+    display: inline-block;  /* Ensures the chart is treated as a block element that can be centered */
 }
 
 .key-extras-col {
     width: 2vw;
 }
 
-/* #keys-songs-container {
-    width: 18vw;
-} */
-
 #keys-chart-container {
-    /* width: 80vw; */
     height: 50vh;
 }
 
 /* Media query for smaller screens */
 @media screen and (max-width: 1100px) {
+    .keys-row-title {
+        margin-top: 2vh;
+    }
+
+    .segmented-control {
+        margin-bottom: 2vh;
+    }
+
     #keys-row-chart {
         width: 100vw;
         height: 30vh;
@@ -117,19 +116,22 @@
 
     #keys-songs-container {
         display:flex;
+        flex-direction: column;
         width: 40vw;
+    }
+
+    .key-songs-text {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
     }
 
     #keys-chart-container {
         width: 60vw;
+        height: 40vh;
     }
 
     .key-p {
         margin-top: 0.2vh;
     }
     
-    /* .keys-col-extra {
-        width: 7vw;
-    } */
-
 }
