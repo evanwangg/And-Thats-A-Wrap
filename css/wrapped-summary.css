@@ -1,11 +1,9 @@
-.page-19 .generate-summary-btn {
-    padding: 0.5rem 1rem;
-    background-color: #1db954;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 2rem;
+/* Wrapped Page */
+.page-19 {
+    background-image: url('../img/wrapped-bg/bg3.png');
+    background-size: cover;
+    color: whitesmoke;
+    display: block;
 }
 
 .page-19 .summary-div {
@@ -13,7 +11,7 @@
     background-color: #450077;
     max-width: 30%;
     margin: 1rem auto;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
 }
 
 .page-19 .wrapped-img-div {
@@ -53,4 +51,11 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.page-19 .extra-info-text {
+    color: #f0f0f0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0.8;
 }

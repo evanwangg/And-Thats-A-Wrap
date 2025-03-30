@@ -38,7 +38,8 @@ body, html {
     color: white;
 }
 
-.page-9 h5, .page-18 h5 {
+.page-9 h5,
+.page-18 h5 {
     color: white;
 }
 
@@ -52,7 +53,15 @@ body, html {
     font-family: 'Roboto', sans-serif;
 }
 
-.page-2 h3, .page-4 h3, .page-5-25 h3, .page-6 h3, .page-8 h3, .page-10 h3, .page-13 h3, .page-15 h3, .page-17 h3 {
+/* Text Slides */
+.page-2 h3,
+.page-4 h3,
+.page-6 h3,
+.page-8 h3,
+.page-10 h3,
+.page-13 h3,
+.page-15 h3,
+.page-17 h3 {
     color: black;
     font-size: 2rem;
     margin-top: 10vh;
@@ -64,7 +73,17 @@ body, html {
     font-family: 'Roboto', sans-serif;
 }
 
-.page-1, .page-4, .page-5-25 .page-6, .page-8, .page-10, .page-12, .page-13, .page-15, .page-17, .page-19 {
+/* Text Slides */
+.page-1,
+.page-4,
+.page-6,
+.page-8,
+.page-10,
+.page-12,
+.page-13,
+.page-15,
+.page-17,
+.page-19 {
     display: grid;
     text-align: center;
     place-items: center; 
@@ -75,13 +94,30 @@ body, html {
     background-position: center;
     height: 100vh;
 }
+
+/* Start Slide */
+.page-1 {
+    display: block;
+}
+
 .page-1 span {
     font-size: 1rem;
     margin-bottom: 7vh;
     font-family: 'Roboto', sans-serif;
 }
-.page-1 {
-    display: block;
+
+.page-1 h1 {
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 10em;
+    font-weight: bolder;
+    background-color: #00d8a4;
+    text-align: right;
+    width: 50%;
+    line-height: 0.90;
+    letter-spacing: -10px;
+    /* margin-left: 20vw; */
 }
 
 .page-1 h2 {
@@ -98,33 +134,6 @@ body, html {
     padding-bottom: 10px;
     letter-spacing: -5px;
     /* margin-left: 15vw; */
-}
-.page-1 h1 {
-    margin-top: 0;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 10em;
-    font-weight: bolder;
-    background-color: #00d8a4;
-    text-align: right;
-    width: 50%;
-    line-height: 0.90;
-    letter-spacing: -10px;
-    /* margin-left: 20vw; */
-}
-
-.page-19 {
-    background-image: url('../img/wrapped-bg/bg3.png');
-    background-size: cover;
-    color: whitesmoke;
-    display: block;
-}
-
-.page-19 h1 {
-    color: whitesmoke;
-    background-color: #450077;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 #loading-message {
@@ -162,6 +171,7 @@ body, html {
 .vis:nth-child(20) { transform: translateX(1900%); }
 .vis:nth-child(21) { transform: translateX(2000%); }
 .vis:nth-child(22) { transform: translateX(2100%); }
+.vis:nth-child(23) { transform: translateX(2200%); }
 
 /* Dots Navigation */
 .dots-container {
