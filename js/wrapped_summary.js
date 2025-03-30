@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     let timeSpent = (endTime - startTime) / 60000;
 
                     let wrappedData = [
-                        { title: 'Top Artists', data: [lastSearchedArtist, audioAttrsArtistSelected] },
+                        { title: 'Top Artists', data: [audioAttrsArtistSelected, lastSearchedArtist] },
                         { title: 'Top Songs', data: [globeTrackSelected, radialTrackSelected] },
                         { title: 'Top Genre', data: [genreSelected] },
                         { title: 'Top Key', data: [keySelected] },
