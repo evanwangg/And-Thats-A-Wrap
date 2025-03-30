@@ -23,10 +23,10 @@ class NominationInfo {
         }
 
         vis.masks = {
-            1: "url('../img/masks/mask-4.svg')",
-            2: "url('../img/masks/mask-3.svg')",
-            3: "url('../img/masks/mask-3.svg')",
-            4: "url('../img/masks/mask-4.svg')",
+            1: "url('img/masks/mask-4.svg')",
+            2: "url('img/masks/mask-3.svg')",
+            3: "url('img/masks/mask-3.svg')",
+            4: "url('img/masks/mask-4.svg')",
         }
 
 
@@ -155,7 +155,7 @@ class NominationInfo {
             workImage = await vis.getArtistImageFromWikidata(artist); // use artist image as fallback
         }
 
-        return workImage || "../img/grammy_placeholder.jpg"; // final fallback if both fail
+        return workImage || "img/grammy_placeholder.jpg"; // final fallback if both fail
     }
 
 }

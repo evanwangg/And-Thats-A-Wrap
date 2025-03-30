@@ -11,32 +11,32 @@ const content = [
             {
                 name: "Global Spotify Top 200",
                 link: "https://www.kaggle.com/datasets/dhruvildave/spotify-charts/data",
-                img: "../img/datasets/global-spotify-top-200.png"
+                img: "img/datasets/global-spotify-top-200.png"
             },
             {
                 name: "Spotify Audio Features, Musical Key",
                 link: "https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-600k-tracks?select=tracks.csv",
-                img: "../img/datasets/spotify-audio-attrs.png"
+                img: "img/datasets/spotify-audio-attrs.png"
             },
             {
                 name: "Spotify Music Genres",
                 link: "https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset",
-                img: "../img/datasets/spotify-genres.png"
+                img: "img/datasets/spotify-genres.png"
             },
             {
                 name: "Music Intake Method Revenue",
                 link: "https://blog.datawrapper.de/music-industry-streaming-revenue-vs-physical-sales/",
-                img: "../img/datasets/music-money.png"
+                img: "img/datasets/music-money.png"
             },
             {
                 name: "Grammy Awards",
                 link: "https://www.kaggle.com/datasets/unanimad/grammy-awards",
-                img: "../img/datasets/grammys.png"
+                img: "img/datasets/grammys.png"
             },
             {
                 name: "Billboard Hot 100",
                 link: "https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs",
-                img: "../img/datasets/billboard-100.png"
+                img: "img/datasets/billboard-100.png"
             }
         ]
     },
@@ -46,12 +46,12 @@ const content = [
             {
                 name: "Spotify API",
                 link: "https://developer.spotify.com/documentation/web-api/",
-                img: "../img/datasets/spotify-logo.png"
+                img: "img/datasets/spotify-logo.png"
             },
             {
                 name: "Material Design Icons",
                 link: "https://pictogrammers.com/library/mdi",
-                img: "../img/datasets/material-design-icons.png"
+                img: "img/datasets/material-design-icons.png"
             }
         ]
     }
