@@ -106,4 +106,4 @@ d3.select(".page-19")
 d3.select(".page-19")
     .append("div")
     .attr("class", "extra-info-text")
-    .text("Info is based on most your recent interactions on the website");
+    .text("Info is based on your most recent interactions on the website");
