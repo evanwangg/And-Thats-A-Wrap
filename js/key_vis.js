@@ -301,7 +301,7 @@ d3.csv("data/spotify600k.csv", row => {
                 }
                 
                 keySelected = key;
-                sessionStorage.setItem("keySelected", keyNotesPositions[key].note);
+                sessionStorage.setItem("keySelected", `${keyNotesPositions[key].note} ${keyMode ? 'Major' : 'Minor'}`);
                 updateChart(key);
             })
             .on('mouseover', function(event, d) {
