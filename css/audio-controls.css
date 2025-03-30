@@ -1,0 +1,43 @@
+.audio-controls {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    /* background-color: #0f0f0f; */
+    border-top: 2px solid #6f6f6f;
+    padding-top: 10px;
+}
+
+.audio-controls button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    padding: 0;
+    font-size: 40px;
+    cursor: pointer;
+    background: #0f0f0f;
+    color: grey;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.audio-controls .left-button:hover,
+.audio-controls .right-button:hover {
+    color: white;
+}
+
+.audio-controls .play-button {
+    font-size: 40px;
+    height: 50px;
+    width: 50px;
+    color: black;
+    background-color: whitesmoke;
+}

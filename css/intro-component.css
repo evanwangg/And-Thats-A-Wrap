@@ -1,0 +1,111 @@
+.intro-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f0f0f;
+    z-index: 1;
+}
+
+.intro-text-1 {
+    color: white;
+    font-size: 6em;
+    font-weight: bolder;
+    background-color: #00d8a4;
+    text-align: right;
+    width: 50%;
+    line-height: 1.3;
+    margin-bottom: 0;
+    letter-spacing: -5px;
+    white-space: pre;
+}
+
+.intro-text-2 {
+    color: white;
+    margin-top: 0;
+    text-align: center;
+    font-size: 10em;
+    font-weight: bolder;
+    background-color: #00d8a4;
+    text-align: right;
+    width: 50%;
+    line-height: 0.55;
+    letter-spacing: -10px;
+    white-space: pre;
+}
+
+/* Keyframes for the fly-in animation */
+@keyframes flyIn {
+    from {
+        transform: translateY(100%); /* Start from left */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* End at normal position */
+        opacity: 1;
+    }
+}
+
+/* Keyframes for the float animation */
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Initial position */
+    }
+    50% {
+        transform: translateY(-5px); /* Float up */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for the fly-out animation */
+@keyframes flyOut {
+    from {
+        transform: translateY(0); /* start at normal position */
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%); /* end at top */
+        opacity: 0;
+    }
+}
+
+@keyframes moveDiv {
+    from {
+        z-index: 1;
+    }
+    to {
+        z-index: -1;
+    }
+}
+
+@keyframes fadeDiv {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* apply animation to .intro-text-1 and .intro-text-2 */
+.intro-text-1,
+.intro-text-2 {
+    animation: flyIn 1s ease-out forwards, float 1s ease-in-out 1s forwards, flyOut 1s ease-in 2s forwards;
+}
+
+/* add animation for when the text flies out (used in JS to trigger exit animation) */
+/* .intro-text-1.fly-out,
+.intro-text-2.fly-out {
+    animation: flyOut 1s ease-in forwards;
+} */
+
+.intro-container {
+    animation: fadeDiv 1s forwards 2s, moveDiv 0s forwards 3s;
+}

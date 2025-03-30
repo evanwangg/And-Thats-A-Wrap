@@ -1,0 +1,211 @@
+/* #intake-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    z-index: 9999; 
+} */
+
+.intake-main-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+}
+
+.intake-info-container {
+    display: inline-block;
+    flex-direction: column;
+    flex: 0 1 auto;
+    width: 25vw;
+    margin-top: 6em;
+}
+
+.intake-p {
+    margin-left: 4em;
+    width: 25vw;
+}
+
+#intake-title {
+    margin-left: 2.7em;
+    height: 3em;
+    font-weight: bold;
+    font-size: 1.5em;
+    width: 25vw;
+}
+
+#intake-legend {
+    margin-left: 2.7em;
+    padding-left: 0;
+    margin-top: 0.5em;
+    font-weight: bold;
+    font-size: 1em;
+    width: 25vw;
+}
+
+.intake-img-container {
+    /* display:flex; */
+    position: relative;
+    flex: 0 1 auto;
+    margin-top: 4em;
+    margin-bottom: 2em;
+    margin-left: 4em;
+    margin-right: 2em;
+    border: thick solid gray;
+    border-radius: 1.5em;
+    width: 60vw;
+}
+
+.intake-text {
+    font-size: 13px;
+    font-weight: bold;
+    fill: #333;
+    text-anchor: middle;
+  }
+
+.row-extra2 {
+    margin-bottom: 30vh;
+}
+
+/* Tooltip styles */
+.intake-tooltip, .intake-tooltip-bars {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+/* Container for buttons */
+#intake-buttons-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 1em;
+    width: 10vw;
+}
+
+/* Button styles */
+.method-button {
+    background-color: gray;
+    /* background-color: #1DB954; */
+    color: white;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    padding: 8px 20px;
+    margin: 0.8em 0; /* Space between buttons */
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Container for the segmented button */
+.chart-buttons-control {
+    display: flex;
+    border-radius: 1.5em; /* Round the outer container to make it look like one button */
+    overflow: hidden;
+    width: 30vw;
+    margin-top: 1em;
+    padding: 0;
+    transform: translateX(60px);
+}
+
+/* Style for the individual button segments */
+.chart-button {
+    flex: 1; /* Each button will take up 50% of the width */
+    padding: 0.2em;
+    background-color: #808080;
+    border: none;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 0; /* No border radius to avoid internal rounding */
+}
+
+/* Active state for the selected button */
+.chart-button.active, .method-button.active {
+    background-color: #1db954;
+    color: white;
+}
+
+.chart-button:hover, .method-button:hover {
+    background-color: #b3b3b3; /* Lighter gray background on hover */
+    color: #333; /* Darken text on hover */
+}
+
+.chart-button.active:hover, .method-button.active:hover{
+    background-color: #159e3e; /* Darker green for active button hover */
+    color: white; /* Keep text color white */
+}
+
+/* Top part before image */
+.row-extra1 {
+    margin-bottom: 1vh;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1300px) {
+    /* Adjust text size for smaller screens */
+    .intake-text {
+        font-size: 10px;
+    }
+
+    .intake-info-container p {
+        font-size: 1em;
+        margin: 2em;
+    }
+
+    #intake-title {
+        margin-left: 1.5em;
+    }
+
+    /* .intake-img-container {
+        display:flex;
+        flex: 0 1 auto;
+        flex-direction: row;
+    } */
+
+    .row-extra2 {
+        margin-bottom: 0vh;
+    }
+
+    #intake-buttons-container {
+        /* display: flex;
+        flex-direction: row;
+        align-items: center; */
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 1em;
+        
+        /* bottom: 0em;
+        left: 15%; */
+        bottom: 20px; 
+        left: 81%; 
+        /* bottom: -5em;
+        left: 15%; */
+    }
+
+    /* Adjust button size and spacing */
+    .method-button {
+        font-size: 12px;
+        margin: 0.8 0em; /* Space between buttons */
+        padding: 6px 16px;
+    }
+
+    .intake-img {
+        width: 20%;
+        padding-right: 0.2em;
+        /* visibility: hidden; */
+    }
+}

@@ -1,0 +1,65 @@
+.page-21 {
+    color: white;
+    display: grid;
+    text-align: left;
+    grid-template-columns: auto;
+    grid-template-areas: 'a '
+                         'b b'
+                         'd e';
+    font-weight: 700;
+}
+
+#data-sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3.5rem 3.5rem 3.5rem;
+    gap: 0.5em;
+    grid-template-areas: 'a b'
+                         'c d'
+                         'e f';
+    font-weight: 700;
+}
+
+#other-sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3.5rem 3.5rem 3.5rem;
+    gap: 0.7em;
+    grid-template-areas: 'a b';
+    font-weight: 700;
+}
+
+.grid-item {
+    width: 100%;
+    height: 100%;
+    background-color: #2f2f2f;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.grid-item img {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover; /* Ensures the image scales to fit within the div */
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.grid-item a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.page-21 h1 {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.page-21 h5 {
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration: none;
+}

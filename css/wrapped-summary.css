@@ -1,0 +1,56 @@
+.page-19 .generate-summary-btn {
+    padding: 0.5rem 1rem;
+    background-color: #1db954;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.page-19 .summary-div {
+    padding: 2rem 0.5rem;
+    background-color: #450077;
+    max-width: 30%;
+    margin: 1rem auto;
+    margin-top: 4rem;
+}
+
+.page-19 .wrapped-img-div {
+    width: 10rem;
+    height: 10rem;
+    background-color: white;
+    margin: 0 auto; /* horizontally centres */
+    margin-bottom: 1rem;
+}
+
+.page-19 .wrapped-text-div {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+        'a b'
+        'c d'
+        'e f';
+    color: #f0f0f0;
+    text-align: left;
+    row-gap: 1.2rem;
+    column-gap: 1.5rem;
+    background-color: #450077;
+}
+
+.page-19 .title-div {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.page-19 .data-item-div {
+    width: 100%;
+    letter-spacing: -1px;
+    line-height: 1.3;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

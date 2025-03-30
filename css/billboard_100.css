@@ -1,0 +1,60 @@
+#billboard-vis .placeholder-text {
+    font-size: 15px;
+    color: #ffffff;
+    text-anchor: middle;
+}
+
+#billboard-vis .tooltip {
+    position: absolute;
+    background-color: #0f5728;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+
+#billboard-vis .axis {
+    stroke: white;
+    stroke-width: 0.7px;
+    font-size: 10px;
+}
+
+#billboard-vis .bar {
+    fill: #1db954;
+}
+
+#billboard-vis .billboard-title {
+    font-size: 14px;
+    fill: white;
+}
+
+#billboard-vis #reset-button {
+    padding: 8px 16px;
+    background-color: #1db954;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#billboard-vis #reset-search-button:hover {
+    text-decoration: underline;
+}
+
+#billboard-vis .selection {
+    stroke: white;
+    stroke-width: 2;
+}
+
+#billboard-vis #reset-button:hover {
+    text-decoration: underline;
+}
+
+#billboard-vis #autoplay-button:hover {
+    text-decoration: underline;
+}
+
+#billboard-vis .billboard-bar:hover {
+    fill: #6de998;
+}

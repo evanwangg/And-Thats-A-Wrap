@@ -1,0 +1,487 @@
+#vis8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /*background-color: blue;*/
+}
+
+#vis8 #colour-overlay{
+    position: fixed;
+}
+#vis8 #timeline-area{
+    /*background-color: orangered;*/
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /*gap: 2%;*/
+    /*mango*/
+}
+
+.info-box{
+    /*background-color: greenyellow;*/
+    /*height: 10%;*/
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-evenly;*/
+    align-items: center;
+}
+
+.top-info-box{
+    /*background-color: lightblue;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    /*border: 2px solid #1db954;*/
+    /*margin-top: 1%;*/
+    /*gap: 5%;*/
+}
+
+.info-box p{
+    color: whitesmoke;
+    /*font-size: 30px;*/
+    font-size: 1rem;
+    justify-self: center;
+    align-items: center;
+}
+
+
+#vis-title{
+    /*background-color: yellow;*/
+    font-size: 2rem;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+#sort-filter{
+    /*background-color: orchid;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#top-artists-wrapper{
+    /*background-color: orangered;*/
+}
+#category-artists-wrapper{
+    /*background-color: steelblue;*/
+}
+
+.bottom-info-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0.5%;
+    /*gap: 2%;*/
+}
+
+#artist-timeline-area{
+    /*background-color: hotpink;*/
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*margin-left: 5%;*/
+    /*margin-right: 5%;*/
+    /*max-width: 95%; !* mango *!*/
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    /*height: 80%;*/
+}
+
+.main-drawing-area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.child-timeline-artist-name{
+    /*height: auto;*/
+    /*min-height: 50px;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #1db954;
+    padding-left: 1%;
+    padding-right: 1%;
+    flex-grow: 1;
+}
+
+#artist-wrapper{
+    /*background-color: yellow;*/
+
+}
+
+#vis8 .artist-timeline-area-between{
+    width: 100%;
+    /*background-color: grey;*/
+
+    border: 100px white;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#vis8 .child-timeline{
+    /*fill: darkslategrey;*/
+    /*fill: black;*/
+    border: 10px white;
+    /*justify-self: center;*/
+    /*width: 75%;*/
+    /*padding: 5px 5px 0;*/
+}
+
+
+#vis8 #circle-grammys-x-axis,
+#vis8 #circle-grammys-x-axis path, 
+#vis8 #circle-grammys-x-axis line,
+#vis8 text {
+    stroke: #1db954;
+    font-size: 1rem;
+}
+
+#vis8 .nomination-circle{
+    fill: lightgreen;
+}
+
+/*div*/
+#vis8 .hidden-info{
+    /*background-color: hotpink;*/
+    /*padding: 5px 5px 0;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /*align-items: center;*/
+    /*align-self: center;*/
+    /*gap: 10%;*/
+    /*margin: 1% 0%;*/
+    /*height: 1000px;*/
+    /*margin-bottom: 1%;*/
+    /*width: 95%; !* mango *!*/
+    /*padding: 2.5%;*/
+
+}
+
+.main-drawing-area{
+    /*mango*/
+    gap: 2%;
+    margin-top: 1%;
+    /*margin-bottom: 1%;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    /*background-color: orangered;*/
+
+}
+
+.timeline-wrapper{
+    /*background-color: red;*/
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: flex-end;
+    gap: 1%;
+    /*padding: 5%;*/
+}
+
+#collapse-all{
+    /*background-color: deeppink;*/
+    align-self: center;
+    margin: 2%;
+    padding-bottom: 0.5%;
+    border: 1px solid #1db954;
+    border-radius: 6px 6px 6px 6px; /* Rounded corners only on the right */
+    /*margin: 2.5%;*/
+}
+
+#collapse-all p, #bottom-right-info p{
+    color: white;
+}
+
+/*div*/
+#vis8 .each-nomination-vis8{
+    /*background-color: lightgreen;*/
+    /*background-color: #1db954;*/
+    /*background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(9) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='%23cddc39ff'/><path d='M0-10C-.011-4.49-4.485.03-10 .03-4.485.03-.011 4.49 0 10 .011 4.498 4.493.001 10-.01 4.493-.02.012-4.498 0-10zm0 20c-.011 5.51-4.485 10.03-10 10.03 5.515 0 9.989 4.46 10 9.97.011-5.502 4.493-9.999 10-10.01C4.493 19.98.012 15.502 0 10zm20-20C19.989-4.49 15.515.03 10 .03c5.515 0 9.989 4.46 10 9.97.011-5.502 4.493-9.999 10-10.01-5.507-.01-9.988-4.488-10-9.99zm0 20c-.011 5.51-4.485 10.03-10 10.03 5.515 0 9.989 4.46 10 9.97.011-5.502 4.493-9.999 10-10.01-5.507-.01-9.988-4.488-10-9.99z'  stroke-width='1' stroke='none' fill='%234caf50ff'/><path d='M10 0C9.989 5.51 5.515 10.03 0 10.03c5.515 0 9.989 4.46 10 9.97.011-5.502 4.493-9.998 10-10.01-5.507-.01-9.988-4.488-10-9.99z'  stroke-width='1' stroke='none' fill='%23e15283ff'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");*/
+
+    /*fill: #0f5728;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#vis8 .nominations-parent-vis8{
+    width: 100%;
+    /*background-color: grey;*/
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 1%;
+    overflow-x: auto;           /* Enable horizontal scroll */
+    overflow-y: hidden;         /* Prevent vertical scroll */
+    position: relative;
+}
+
+/*div*/
+#vis8 .nomination-information{
+    /*background-color: red;*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: flex-start;*/
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    padding: 2%;
+    border: 1px solid white;
+    position: relative;
+    overflow: hidden
+
+}
+
+.nomination-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+    /*background-color: pink;*/
+}
+ .nomination-image img{
+    /*width: 75%; !* Set the image width to 60% of the parent div *!*/
+    /*height: 75%; !* Maintain the aspect ratio *!*/
+    /*position: absolute;*/
+    /*top: 75%; !* Vertically center *!*/
+    /*left: 45%; !* Horizontally center *!*/
+    /*transform: translate(-50%, -50%);*/
+    background-color: pink;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+     /*border: 10px solid white; !* White border around the image *!*/
+
+     /*mask-image: url('../im.svg');*/
+     /*-webkit-mask-image: url('../img/clover.svg'); !* Safari support *!*/
+
+     mask-size: cover;
+     -webkit-mask-size: cover;
+
+     /*mask-size: 450px 450px; !* Set fixed size (100px by 100px) *!*/
+     /*-webkit-mask-size: 450px 450px;*/
+
+     mask-repeat: no-repeat;
+     -webkit-mask-repeat: no-repeat;
+
+     mask-position: center;
+     -webkit-mask-position: center;
+
+}
+
+
+/*div*/
+.each-nomination{
+    /*background-color: grey;*/
+    /*gap: 10%;*/
+    /*flex: 2;*/
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 2;
+    /*padding: 10px;*/
+}
+
+.nominee-text {
+    position: relative;
+    font-size: 2rem;  /* Smaller font size for nominee */
+    font-weight: bold;
+    color: white;
+    /*padding: 5px 10px;*/
+    border-radius: 5px;
+    z-index: 2;
+    text-align: left;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+
+}
+
+
+
+.category-text {
+    position: relative;
+    font-size: 1rem;  /* Larger font size for category */
+    font-weight: bold;
+    /*padding: 10px 20px;*/
+    border-radius: 5px;
+    text-align: left;
+    z-index: 3;
+    /*margin-bottom: 10px;  !* Add some space between category and nominee *!*/
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.artist-name-label{
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    align-self: center;
+    color: whitesmoke;
+}
+
+#top-artists-input:focus {
+    border-color: #007bff;
+}
+
+/* Style the button next to the input */
+#apply-filter {
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #28a745;
+    border-left: none; /* Remove left border to blend with input */
+    border-radius: 0 6px 6px 0; /* Rounded corners only on the right */
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+/*#apply-filter:hover {*/
+/*    background-color: #218838;*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+/*#apply-filter:active {*/
+/*    transform: scale(0.95);*/
+/*}*/
+
+.btn-filter, .btn {
+    background-color: #1db954 !important;
+    border-color: #1db954 !important;
+    color: white !important;
+    /*background: 0 0;*/
+    width: 100%;
+}
+
+.btn-filter:hover {
+    background-color: #18a74c !important;
+    border-color: whitesmoke !important;
+}
+
+#filter-controls {
+    color: #1db954;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+}
+
+#btn-div{
+    border: 1px solid #1db954;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 6px;
+    /*background: 0 0;*/
+    /*background-color: hotpink;*/
+}
+
+#top-artists-value{
+    background: 0 0;
+    color: whitesmoke;
+    align-self: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#book {
+    width: 500px;
+    height: 300px;
+    perspective: 1000px; /* 3D effect */
+    position: relative;
+}
+
+.book-inner {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    backface-visibility: hidden; /* Hide back of the page when flipped */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page.flip {
+    transform: rotateY(90deg);
+}
+
+.page-back {
+    transform: rotateY(180deg);
+}
+
+
+.category-dropdown {
+    -webkit-appearance: none; /* Removes default iOS/Safari style */
+    -moz-appearance: none; /* Removes default Firefox style */
+    appearance: none; /* Removes default style for all browsers */
+    background-color: whitesmoke;
+    border: 1px solid #1DB954;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;  /* Ensures dropdown takes full width */
+    max-width: 100%;  /* Prevents overflow */
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden; /* Hides overflow */
+    text-overflow: ellipsis;
+    min-width: 250px;  /* Prevents shrinking */
+}
+
+#category-dropdown option {
+    width: 50%; /* Ensure options do not overflow */
+    max-width: 250px;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show "..." for long names */
+}
+
+.dropdown-menu {
+    z-index: 1050;
+}
+
+

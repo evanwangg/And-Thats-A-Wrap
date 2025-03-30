@@ -1,0 +1,135 @@
+.keys-row-title {
+    margin-top: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.key-p {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2vh;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Container for the segmented button */
+.segmented-control {
+    display: flex;
+    border-radius: 1.5em; /* Round the outer container to make it look like one button */
+    overflow: hidden;
+    width: 35vw;
+    padding: 0;
+}
+
+/* Style for the individual button segments */
+.segmented-button {
+    flex: 1; /* Each button will take up 50% of the width */
+    padding: 0.5em;
+    background-color: #808080;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 0; /* No border radius to avoid internal rounding */
+}
+
+/* Active state for the selected button */
+.segmented-button.active {
+    background-color: #1db954;
+    color: white;
+}
+
+.segmented-button:hover {
+    background-color: #b3b3b3; /* Lighter gray background on hover */
+    color: #333; /* Darken text on hover */
+}
+
+.segmented-button.active:hover {
+    background-color: #159e3e; /* Darker green for active button hover */
+    color: white; /* Keep text color white */
+}
+
+.key-x-axis, .key-y-axis {
+    stroke: white; /* Axis text colour */
+    stroke-width: 0.5; /* Axis text thickness */
+}
+
+.key-axis-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#keys-row-notes {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative; */
+    width: 100vw;
+    height: 20vh;
+}
+
+#keys-row-chart {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 50vh;
+}
+
+.key-songs-text {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+
+#key-chart {
+    display: inline-block;    /* Ensures the chart is treated as a block element that can be centered */
+}
+
+.key-extras-col {
+    width: 2vw;
+}
+
+/* #keys-songs-container {
+    width: 18vw;
+} */
+
+#keys-chart-container {
+    /* width: 80vw; */
+    height: 50vh;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1100px) {
+    #keys-row-chart {
+        width: 100vw;
+        height: 30vh;
+    }
+
+    .key-extras {
+        height: 0.4vh;
+    }
+
+    #keys-songs-container {
+        display:flex;
+        width: 40vw;
+    }
+
+    #keys-chart-container {
+        width: 60vw;
+    }
+
+    .key-p {
+        margin-top: 0.2vh;
+    }
+    
+    /* .keys-col-extra {
+        width: 7vw;
+    } */
+
+}

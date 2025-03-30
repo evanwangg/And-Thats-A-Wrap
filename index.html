@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSC316 - Final Project</title>
+
+	<!-- Load CSS libraries -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<!-- Slider -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.4.0/nouislider.css"
+		integrity="sha512-DGB74Gyw93qON+V0QxSRs1er6sqoPyFoy23HBL5LN7MRJBcjeCU22zega+vOEGE0XQLoVrv4ExcaesSTwZQA2w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+
+	<!-- D3 -->
+	<script src="https://d3js.org/d3.v7.min.js"></script> <!-- Load D3.js -->
+	<script src="https://d3js.org/topojson.v3.min.js"></script>
+
+	<!-- own CSS -->
+	<link rel="stylesheet" href="css/start-screen.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/audio-controls.css">
+	<link rel="stylesheet" href="css/intro-component.css">
+	<link rel="stylesheet" href="css/wrapped-text.css">
+	<link rel="stylesheet" href="css/track-display.css">
+	<link rel="stylesheet" href="css/acknowledgements.css">
+	<link rel="stylesheet" href="css/wrapped-summary.css">
+
+	<link rel="stylesheet" href="css/vis1.css">
+	<link rel="stylesheet" href="css/vis2.css">
+	<link rel="stylesheet" href="css/vis8.css">
+	<link rel="stylesheet" href="css/key_vis.css">
+	<link rel="stylesheet" href="css/genre_vis.css">
+	<link rel="stylesheet" href="css/intake_vis.css">
+	<link rel="stylesheet" href="css/billboard_100.css">
+	<link rel="stylesheet" href="css/flipping-vis.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<section class="vis page-1" data-page-name="Title Page">
+			<h2>Welcome to the World's Music,</h2>
+			<h1>Wrapped!</h1>
+		</section>
+
+		<section class="vis page-2" data-page-name="Globe Intro"></section>
+
+		<section class="vis page-3" id="vis1" data-page-name="Globe Vis"></section>
+
+		<section class="vis page-4" data-page-name="Audio Attributes Intro"></section>
+
+		<section class="vis page-5" id="vis2" data-page-name="Audio Attributes Vis"></section>
+
+		<!-- <section class="vis page-5-25" data-page-name="Song Attributes Intro"></section> -->
+
+		<section class="vis page-5-5" data-page-name="Song Attributes" id="song-attr-spider-graph-vis"></section>
+
+		<section class="vis page-6" data-page-name="Musical Key Intro"></section>
+
+		<section class="vis page-7" id="key-vis" data-page-name="Musical Key Vis">
+			<div class="row keys-row-title">
+				<div class="segmented-control">
+					<button class="segmented-button" id="major-key">Major Keys</button>
+					<button class="segmented-button" id="minor-key">Minor Keys</button>
+				</div>
+				<p class="key-p">Click on any of the notes to see information about that key over time and switch
+					between major and minor keys above!</p>
+			</div>
+
+			<div class="row">
+				<div class="row" id="keys-row-notes">
+					<div class="col">
+						<div id="musical-keys-container"></div>
+					</div>
+				</div>
+
+				<div class="row" id="keys-row-chart">
+					<div class="col" id="keys-chart-container">
+						<div id="key-chart"></div>
+					</div>
+					<div class="col" id="keys-songs-container">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="vis page-8" data-page-name="Genre Intro"></section>
+
+		<section class="vis page-9" id="genre-vis" data-page-name="Genre Vis">
+			<h5>What are the average popularity of genres over time?</h5>
+			<p>Select a genre in the dropdown to see its data, and hover over a bar below to see more details!</p>
+			<select name="genre-select" id="genre-select">
+				<option value="">Select Genre</option>
+			</select>
+			<div id="genre-chart"></div>
+			<div id="genre-chart-flipped"></div>
+		</section>
+
+		<section class="vis page-10" data-page-name="Intake Method Intro"></section>
+
+		<section class="vis page-11" id="intake-vis" data-page-name="Intake Method Vis">
+			<div class="row intake-main-row">
+				<div class="col intake-info-container">
+					<p id="intake-title">Music Consumption Methods: Revenue Proportions</p>
+					<p class="intake-p">Each ring represents a year. The innermost ring starts at 1999 and increases by
+						year until the outermost ring at 2023. Each ring shows the proportion of revenue for each
+						consumption method (Physical, Downloads, and Streaming) for that year.
+						Hovering over a ring displays a tooltip with detailed information about revenue for that year.
+					</p>
+					<p class="intake-p"><strong>Clicking the buttons allows you to see the revenues for the different
+							consumption methods.</strong></p>
+					<div id="intake-legend"></div>
+				</div>
+				<div class="col intake-img-container">
+					<div class="row">
+						<div class="col">
+							<div class="row">
+								<div class="chart-buttons-control">
+									<button class="chart-button" id="intake-radial-chart-btn">Radial Chart</button>
+									<button class="chart-button" id="intake-bar-chart-btn">Bar Chart</button>
+								</div>
+							</div>
+							<div id="intake-chart"></div>
+						</div>
+						<div class="col intake-img">
+							<div class="row row-extra1"></div>
+							<img src="img/img-vinyl-control-3.png" alt="Vinyl image">
+						</div>
+						<div class="col">
+							<div class="row row-extra2"></div>
+							<div class="row">
+								<div id="intake-buttons-container">
+									<button class="method-button" id="show-all-btn">All</button>
+									<button class="method-button" id="total-physical-btn">Physical</button>
+									<button class="method-button" id="downloads-btn">Downloads</button>
+									<button class="method-button" id="streaming-btn">Streaming</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="vis page-12" data-page-name="Highlight"></section>
+
+		<section class="vis page-13" data-page-name="Grammy Nomination Intro"></section>
+
+		<section class="vis page-14" id="vis8" data-page-name="Grammy Nomination Vis"></section>
+
+		<section class="vis page-15" data-page-name="Grammy + Popularity Intro"></section>
+
+    <section class="vis page-16" id="flipping-vis" data-page-name="Grammy + Popularity Vis"></section>
+
+		<section class="vis page-17" data-page-name="Billboard 100 Intro"></section>
+
+		<section class="vis page-18" id="billboard-vis" data-page-name="Billboard 100 Vis">
+			<h5>Who are the top artists and songs in the Billboard Hot 100?</h5>
+			<div id="billboard-placeholder"></div>
+			<div id="billboard-artist-search"></div>
+			<div id="billboard-chart"></div>
+			<div id="billboard-brush"></div>
+		</section>
+
+		<section class="vis page-19" data-page-name="Your Wrapped"></section>
+
+		<section class="vis page-20" id="team-page" data-page-name="Our Team"></section>
+
+		<section class="vis page-21" id="acknowledgements" data-page-name="Acknowledgements and Datasets"></section>
+
+	</div>
+	<div class="audio-controls"></div>
+	<div class="dots-container"></div>
+
+	<script type="module" src="js/vis1.js"></script>
+	<script type="module" src="js/vis2.js"></script>
+	<script type="module" src="js/song-attr-spider-vis.js"></script>
+	<script src="js/key_vis.js"></script>
+	<script src="js/genre_vis.js"></script>
+	<script src="js/intake_vis.js"></script>
+	<script src="js/artist-timeline.js"></script>
+	<script src="js/nomination-info.js"></script>
+	<script type="module" src="js/vis8.js"></script>
+	<script src="js/vinyl.js"></script>
+	<script src="js/flipping-vis.js"></script>
+	<script src="js/billboard_100.js"></script>
+	<script type="module" src="js/wrapped_summary.js"></script>
+
+	<script src="js/main.js"></script>
+	<script src="js/components/intro-component.js"></script>
+	<script src="js/components/wrapped-text.js"></script>
+	<script src="js/components/track-display.js"></script>
+	<script src="js/acknowledgements.js"></script>
+	<script src="js/team.js"></script>
+
+	<!-- embedding JS libraries -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.4.0/nouislider.min.js"
+		integrity="sha512-mZXUH8DAODwCHioWP3gltQwa953LbABMlzTYwYkKqv8eNxOk37B1HgNNuCMfFxgrpW5C34WJbxPDcM58+s1dJA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+	<script>
+		// Ensure D3 is loaded before running this
+		createWrappedText(
+			"page-2",
+			"This year, the world hit shuffle on millions of tracks, but some songs? They never left repeat.",
+			"Welcome to the world’s Spotify Wrapped. Ready to see what made the cut?"
+		);
+
+		createWrappedText(
+			"page-4",
+			"Over the years, music has shifted from soft acoustics to energetic beats; from danceable rhythms to instrumental melodies.",
+			"The world’s playlist is always changing—are you keeping up?"
+		);
+
+		// createWrappedText("page-6",
+		// "From C major to F minor, the world’s music has hit every note. But which keys are hitting the charts?");
+		createWrappedText(
+			"page-6",
+			"A musical key is the foundation of a song—the notes and chords that set the vibe. Through time, artists played with all kinds of keys, from feel-good anthems to emotional ballads.",
+			"Which key will rule the world next year?"
+		)
+
+		createWrappedText(
+			"page-8",
+			"From mainstream to niche, we all have our go-to genres. With 114 genres in the mix, we’ve tracked how their popularity has evolved over the years.",
+			"Which genre had the biggest transformation over time?"
+		);
+
+		createWrappedText(
+			"page-10",
+			"With the rise of streaming, people are moving away from digital downloads and physical sales. We’ve tracked how music consumption has shifted as the world goes digital.",
+			"How has digital streaming reshaped music consumption?"
+		)
+
+		createWrappedText(
+			"page-12",
+			"Music is more than just songs — the cultural events and rankings shape our playlists too. From the Grammy Awards to the Billboard Hot 100, these rankings are the pulse of the music world.",
+			""
+		);
+
+		createWrappedText(
+			"page-13",
+			"The Grammy Awards are the ultimate recognition for artists. With nominations in multiple categories, some artists are dominating the charts.",
+			"And the Grammys go to..."
+		);
+
+		createWrappedText(
+			"page-15",
+			"Let’s break down the connection between Grammy nominations and how they compare to the streams on Spotify.",
+			"How do Grammy nominations stack up against Spotify popularity?"
+		);
+
+		createWrappedText(
+			"page-17",
+			"Since 1958, the Billboard Hot 100 has been the go-to for the top songs in the U.S. Some artists have stayed on the charts for years, while others are one-hit wonders.",
+			"Who’s been on the Billboard Hot 100 the longest?"
+		);
+
+	</script>
+</body>
+
+</html>

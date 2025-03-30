@@ -1,0 +1,119 @@
+#vis1 {
+    background-color: #0f0f0f;
+}
+
+#vis1 .row0 {
+    background-color: transparent;
+    position: absolute;
+    top: 1rem;
+}
+
+#vis1 .left-column {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#vis1 .middle-column {
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#vis1 .right-column {
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#vis1 .globe {
+    fill: #3f3f3f;
+}
+
+#vis1 .country {
+    fill: #1DB954;
+    stroke-width: 0;
+}
+
+#vis1 .selected-country-and-year {
+    color: #b0b0b0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    /* opacity: 1; */
+    position: relative;
+}
+
+#vis1 .globe-svg {
+    /* opacity: 1; */
+    position: relative;
+    /* top: 20px; */
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    margin: 0px;
+}
+
+#vis1 .select-year-btn {
+    height: 5%;
+    width: 60%;
+    background-color: #2f2f2f;
+    border-radius: 3rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #f0f0f0;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0.5rem;
+    padding: 1.3rem;
+    cursor: pointer;
+}
+
+#vis1 .select-year-btn.selected-year {
+    background-color: #1DB954;
+    color: #1f1f1f;
+}
+
+#vis1 .select-year-btn:hover {
+    background-color: #b9ffd1;
+    color: #1f1f1f;
+}
+
+#vis1 .track-bubble:hover {
+    fill: #b9ffd1;
+    opacity: 0.9;
+}
+
+#vis1 .click-bubble-instruction {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    font-weight: 700;
+    margin: auto;
+    text-align: center;
+    padding: 0.3rem;
+}
+
+@keyframes fadeInUpGlobe {
+    /* from {
+        opacity: 1;
+        top: 0px;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    } */
+}
+
+/* Only animate when page-3 is active */
+.page-3.in-view .selected-country-and-year,
+.page-3.in-view .left-svg {
+    animation: fadeInUpGlobe 1s ease-out 2s forwards;
+}

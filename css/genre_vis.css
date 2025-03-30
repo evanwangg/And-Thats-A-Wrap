@@ -1,0 +1,39 @@
+#genre-vis .genre-bar {
+    fill: #1ed760;
+}
+
+#genre-vis .genre-bar:hover {
+    fill: #6de998;
+}
+
+#genre-vis .genre-bar-flipped {
+    fill: #1db954;
+}
+
+#genre-vis .chart {
+    margin: 20px;
+}
+
+#genre-vis .axis-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#genre-vis select {
+    margin: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#genre-vis .genre-tooltip {
+    font-size: 14px;
+    color: white;
+    pointer-events: none;
+    opacity: 0.9;
+    position: absolute;
+    visibility: hidden;
+    background-color: #0f5728;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
