@@ -300,8 +300,8 @@ d3.csv("data/spotify600k.csv", row => {
                     d3.selectAll(".sharp" + key).attr("fill", "#1DB954");
                 }
                 
-                keySelected = key;
                 sessionStorage.setItem("keySelected", `${keyNotesPositions[key].note} ${keyMode ? 'Major' : 'Minor'}`);
+                keySelected = key;
                 updateChart(key);
             })
             .on('mouseover', function(event, d) {
@@ -446,6 +446,7 @@ d3.csv("data/spotify600k.csv", row => {
         keyMode = 0;
         minorKeyButton.classed('active', true);
         majorKeyButton.classed('active', false);
+        sessionStorage.setItem("keySelected", `${keyNotesPositions[keySelected].note} ${keyMode ? 'Major' : 'Minor'}`);
         updateChart(keySelected);
     });
 
@@ -453,6 +454,7 @@ d3.csv("data/spotify600k.csv", row => {
         keyMode = 1;
         majorKeyButton.classed('active', true);
         minorKeyButton.classed('active', false);
+        sessionStorage.setItem("keySelected", `${keyNotesPositions[keySelected].note} ${keyMode ? 'Major' : 'Minor'}`);
         updateChart(keySelected);
     });
 
