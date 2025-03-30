@@ -1,21 +1,24 @@
+import spotifyDataPromise from "./dataloading.js";
+
 let key_container = document.getElementById('key-vis');
 let keyChart_container = document.getElementById('keys-chart-container');
 let keySongs_container = d3.select('#keys-songs-container');
 
 let keySelected = 0;
 let keyMode = 1; // 0 = minor, 1 = major
+let start_new;
 
-d3.csv("data/spotify600k.csv", row => { 
-    row.trackID = row.id;
-    row.title = row.name;
-    row.artists = row.artists;
-    row.date = new Date(row.release_date);
-    row.key = +row.key;
-    row.mode = +row.mode;
-
-    return row;
-}).then(data => {
+spotifyDataPromise.then(data => {
     // Prepare the data
+    data.forEach(row => {
+        row.trackID = row.id;
+        row.title = row.name;
+        row.artists = row.artists;
+        row.date = new Date(row.release_date);
+        row.key = +row.key;
+        row.mode = +row.mode;
+    });
+
     // Group songs by year, mode, and key
     let yearKeyModeCount = {};
 

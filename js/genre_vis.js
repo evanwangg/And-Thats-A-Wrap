@@ -1,8 +1,10 @@
+import spotifyDataPromise from "./dataloading.js";
+
 let genre_container = document.getElementById("genre-vis");
 
 Promise.all([
     d3.csv('data/spotify_genres.csv'),
-    d3.csv('data/spotify600k.csv')
+    spotifyDataPromise
 ]).then(function([genreData, fullData]) {
 
     // create a map for fast genre lookup
