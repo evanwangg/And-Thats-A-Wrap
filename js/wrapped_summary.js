@@ -103,3 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 d3.select(".page-19")
     .append("div")
     .attr("class", "wrapped-summary");
+d3.select(".page-19")
+    .append("div")
+    .attr("class", "extra-info-text")
+    .text("Info is based on most your recent interactions on the website");
