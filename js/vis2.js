@@ -165,7 +165,7 @@ spotifyDataPromise.then(loadedData => {
                             });
                         }
                         // Check if entered artist matches any in cleaned list of artists
-                        return artists.some(artist =>
+                        return d.artist.some(artist =>
                             artist.toLowerCase() === (selectedArtist.toLowerCase())
                         );
                     })
