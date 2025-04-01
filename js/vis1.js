@@ -50,7 +50,7 @@ let globeProjection;
 d3.select(".page-1")
     .append("p")
     .attr("id", "loading-message")
-    .text("Now Loading...");
+    .text("Now Loading... (This could take up to 1 minute)");
 
 Promise.all(years.map(year =>
     d3.csv(`data/spotifytop50_${year}.csv`, row => {
