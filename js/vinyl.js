@@ -10,6 +10,7 @@ class Vinyl {
         this.artist = artist;
         this.nominee = nominee;
         this.popularity = popularity;
+        this.initialRender = true;
 
         this.initVis();
     }
@@ -100,13 +101,19 @@ class Vinyl {
             vis.frontSide.style("background-image", `radial-gradient(circle, rgba(0, 0, 0, 0.6), transparent), url(${vis.coverArt})`);
         }
 
+        vis.frontSide.on('mouseout', function() {
+            if (!vis.initialRender) {
+                vis.resetVinyl();
+            }
+        });
         // Click handler for flipping the vinyl
         vis.frontSide.on('click', function() {
+            vis.initialRender = false;
             vis.flipVinyl();
         });
-        vis.frontSide.on('mouseout', function() {
-            vis.resetVinyl();
-        });
+        // vis.frontSide.on('mouseout', function() {
+        //     vis.resetVinyl();
+        // });
     }
 
     flipVinyl() {
