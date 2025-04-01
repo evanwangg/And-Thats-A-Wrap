@@ -1,3 +1,5 @@
+import spotifyDataPromise from "./dataloading.js";
+
 let container = document.getElementById('vis2'); 
 
 let width = container.offsetWidth * 0.8;
@@ -54,27 +56,34 @@ let attrIcon = {
 
 let allArtists = new Set();
 
-d3.csv("data/spotify600k.csv", (row) => {
-    let artists = row.artists;
-    if (artists.startsWith('"') && artists.endsWith('"')) {
-        artists = artists.slice(1, -1);
-    }
-    if (artists.startsWith('[') && artists.endsWith(']')) {
-        artists = artists.slice(1, -1).split(',').map(artist => artist.trim());
-        artists = artists.map(artist => {
-            if (artist.startsWith('"') && artist.endsWith('"')) {
-                return artist.slice(1, -1);
-            }
-            else if (artist.startsWith("'") && artist.endsWith("'")) {
-                return artist.slice(1, -1);
-            }
-            return artist;
-        });
-    }
-    artists.forEach(artist => allArtists.add(artist));
-    row.artist = artists;
-    return row;
-}).then((loadedData) => {
+spotifyDataPromise.then(loadedData => {
+    loadedData.forEach(row => {
+        let artists = row.artists;
+        
+        // Check and clean up artist string format
+        if (artists.startsWith('"') && artists.endsWith('"')) {
+            artists = artists.slice(1, -1);
+        }
+        if (artists.startsWith('[') && artists.endsWith(']')) {
+            artists = artists.slice(1, -1).split(',').map(artist => artist.trim());
+            artists = artists.map(artist => {
+                if (artist.startsWith('"') && artist.endsWith('"')) {
+                    return artist.slice(1, -1);
+                }
+                else if (artist.startsWith("'") && artist.endsWith("'")) {
+                    return artist.slice(1, -1);
+                }
+                return artist;
+            });
+        }
+        
+        // Add each artist to the allArtists set (assuming it is defined somewhere)
+        artists.forEach(artist => allArtists.add(artist));
+        
+        // Attach the processed artist list to the row
+        row.artist = artists;
+    });
+
     //createIntroComponent("vis2", "Through the years:", "Audio Attributes");
 
     data = loadedData;
@@ -156,7 +165,7 @@ d3.csv("data/spotify600k.csv", (row) => {
                             });
                         }
                         // Check if entered artist matches any in cleaned list of artists
-                        return artists.some(artist =>
+                        return d.artist.some(artist =>
                             artist.toLowerCase() === (selectedArtist.toLowerCase())
                         );
                     })
