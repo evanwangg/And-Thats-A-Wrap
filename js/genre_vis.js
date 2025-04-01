@@ -45,6 +45,12 @@ Promise.all([
         .attr("value", d => d)
         .text(d => d);
 
+    genreSelect.on("keydown", function(event) {
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+            event.preventDefault();
+        }
+    });
+
     function updateChart(selectedGenre) {
         const filteredData = mergedData.filter(d => !selectedGenre || d.genre === selectedGenre);
 
