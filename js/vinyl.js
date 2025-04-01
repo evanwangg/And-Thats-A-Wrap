@@ -34,7 +34,7 @@ class Vinyl {
             .style("width", vis.childWidth + "px")
             .style("height", vis.height + "px")
             .style("position", "relative")
-            .style("z-index", vis.z_index)
+            // .style("z-index", vis.z_index)
             // .style("perspective", "6000px")
         ;
 
@@ -101,7 +101,7 @@ class Vinyl {
         }
 
         // Click handler for flipping the vinyl
-        vis.frontSide.on('click', function() {
+        vis.frontSide.on('mouseover', function() {
             vis.flipVinyl();
         });
         vis.frontSide.on('mouseout', function() {
@@ -116,7 +116,8 @@ class Vinyl {
 
         if (vis.isFlipped) {
             vis.stackVinylsBelow();
-        } else {
+        }
+        else {
             vis.resetVinyl();
         }
     }
