@@ -20,6 +20,7 @@
     height: 5%;
     color: #1db954;
     padding-left: 2%;
+<<<<<<< HEAD
     /*margin-top: 5%;*/
     /*margin-bottom: 5%;*/
 }
@@ -29,6 +30,7 @@
     font-size: 24px;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+=======
     margin-top: 2%;
     /*margin-bottom: 5%;*/
 }
@@ -55,6 +57,7 @@
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
+>>>>>>> c9e66402446c0aae6cc1e31e7ca11c035dc4e482
 }
 
 #graphing-area{
@@ -72,11 +75,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+<<<<<<< HEAD
+=======
     justify-self: center;
+>>>>>>> c9e66402446c0aae6cc1e31e7ca11c035dc4e482
     align-items: center;
     width: 100%;
     height: 100%;
     /*margin-bottom: 1%;*/
+<<<<<<< HEAD
+=======
 }
 
 #svg-title, #svg-area {
@@ -88,6 +96,7 @@
     justify-content: center;
     justify-self: center;
     align-items: center;
+>>>>>>> c9e66402446c0aae6cc1e31e7ca11c035dc4e482
 }
 
 #slider-child{
@@ -143,24 +152,33 @@
     position: relative;
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     justify-content: center;
+=======
     justify-content: left;
+>>>>>>> c9e66402446c0aae6cc1e31e7ca11c035dc4e482
     align-items: flex-start;
     flex-shrink: 0;
     gap: 0;
     flex-wrap: wrap;
     overflow-x: visible;
+<<<<<<< HEAD
     overflow-y: auto;
     padding-top: 1%;
+=======
     overflow-y: visible;
     padding-top: 1%;
     /*overflow: visible;*/
+>>>>>>> c9e66402446c0aae6cc1e31e7ca11c035dc4e482
     /*max-width: 1500px;*/
 }
 
 
 #vinyl-wrapper {
+<<<<<<< HEAD
+=======
     /*justify-self: left;*/
+>>>>>>> c9e66402446c0aae6cc1e31e7ca11c035dc4e482
     /*background-color: orange;*/
     position: relative;
     display: flex;
@@ -170,16 +188,19 @@
     flex-shrink: 0;
     gap: 0;
     flex-wrap: wrap;
+<<<<<<< HEAD
     overflow-x: hidden;
     overflow-y: auto;
     padding-right: 200px;
     /*padding: 5%;*/
+=======
     /*overflow-clip-margin: inherit;*/
     overflow-y: auto;
     /*padding-right: 200px;*/
     /*padding: 5%;*/
-    margin-left: 5%;
+    margin-left: 2%;
     align-self: flex-start;
+>>>>>>> c9e66402446c0aae6cc1e31e7ca11c035dc4e482
 }
 
 
@@ -189,8 +210,11 @@
 }
 
 .vinyl-children-art{
+<<<<<<< HEAD
+    border: 2px solid hotpink;
+=======
     /*border: 2px solid hotpink;*/
-    /*border: 2px solid hotpink;*/
+>>>>>>> c9e66402446c0aae6cc1e31e7ca11c035dc4e482
 }
 
 .vinyl-year {
@@ -201,8 +225,11 @@
     font-size: 24px;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+<<<<<<< HEAD
+=======
     list-style-type: none;
     padding: 0;
+>>>>>>> c9e66402446c0aae6cc1e31e7ca11c035dc4e482
 }
 
 .axis-title{
