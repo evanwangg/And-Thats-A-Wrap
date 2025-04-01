@@ -47,6 +47,7 @@ let evan_songs = [
     { song: "About You", artist: "The 1975" },
     { song: "yeaaa", artist: "Flyana Boss" },
     { song: "Breathing Underwater", artist: "Metric"},
+    { song: "Computer Talk", artist: "austenyo"},
     { song: "Jupiter, the Bringer of Jollity", artist: "Gustav Holst" },
     { song: "New Birth", artist: "Hayato Sumino" },
     { song: "Amour Plastique", artist: "Videoclub, Adèle Castillon, Mattyeux" },
@@ -86,13 +87,37 @@ let teamContainer = d3.select("#team-page").append("div")
     .style("width", "100%")
     .style("background-color", "transparent");
 
-create_member_card("Nancy Hu", "img/pfp/nancy-pfp.png", "img/avatars/User avatar sea lion.png", "n.hu@mail.utoronto.ca", nancy_songs);
+create_member_card(
+    "Nancy Hu",
+    "img/pfp/nancy-pfp.png",
+    "img/avatars/User avatar sea lion.png",
+    "n.hu@mail.utoronto.ca",
+    nancy_songs
+);
 
-create_member_card("Irene Huynh", "img/pfp/irene-pfp.png", "img/avatars/User avatar polar bear.png", "irene.huynh@mail.utoronto.ca", irene_songs);
+create_member_card(
+    "Irene Huynh",
+    "img/pfp/irene-pfp.png",
+    "img/avatars/User avatar polar bear.png",
+    "irene.huynh@mail.utoronto.ca",
+    irene_songs
+);
 
-create_member_card("Evan Wang", "img/pfp/evan-pfp.png", "img/avatars/User avatar llama.png", "eevan.wang@mail.utoronto.ca", evan_songs);
+create_member_card(
+    "Evan Wang",
+    "img/pfp/evan-pfp.png",
+    "img/avatars/User avatar llama.png",
+    "eevan.wang@mail.utoronto.ca",
+    evan_songs
+);
 
-create_member_card("Aamishi Avarsekar", "img/pfp/aamishi-pfp.png", "img/avatars/User avatar dog.png", "aamishi.avarsekar@mail.utoronto.ca", aamishi_songs);
+create_member_card(
+    "Aamishi Avarsekar",
+    "img/pfp/aamishi-pfp.png",
+    "img/avatars/User avatar dog.png",
+    "aamishi.avarsekar@mail.utoronto.ca",
+    aamishi_songs
+);
 
 function create_member_card(name, profileImg, avatarImg, subtext, songs) {
     let memberContainer = teamContainer.append("div")
