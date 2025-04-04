@@ -137,7 +137,7 @@ Promise.all(years.map(year =>
             globeSvg.selectAll('image').remove();
             globeSvg.selectAll('clipPath').remove();
 
-            // update header text
+            // update top text
             d3.select(".selected-country-and-year")
                 .text("Click on a country to find out more!");
         }
