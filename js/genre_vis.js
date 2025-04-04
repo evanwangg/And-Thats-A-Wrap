@@ -1,8 +1,10 @@
+import spotifyDataPromise from "./dataloading.js";
+
 let genre_container = document.getElementById("genre-vis");
 
 Promise.all([
     d3.csv('data/spotify_genres.csv'),
-    d3.csv('data/spotify600k.csv')
+    spotifyDataPromise
 ]).then(function([genreData, fullData]) {
 
     // create a map for fast genre lookup
@@ -42,6 +44,12 @@ Promise.all([
         .enter().append("option")
         .attr("value", d => d)
         .text(d => d);
+
+    genreSelect.on("keydown", function(event) {
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+            event.preventDefault();
+        }
+    });
 
     function updateChart(selectedGenre) {
         const filteredData = mergedData.filter(d => !selectedGenre || d.genre === selectedGenre);

@@ -1,3 +1,5 @@
+import spotifyDataPromise from "./dataloading.js";
+
 let songAttrContainer = document.getElementById("song-attr-spider-graph-vis");
 
 let width = songAttrContainer.offsetWidth * 0.8;
@@ -39,12 +41,13 @@ const levels = 4;
 
 let allSongs = new Set();
 
-d3.csv(`data/spotify600k.csv`, (row) => {
-    row.popularity = row.popularity / 100;
-    row.artists = row.artists.substring(2, row.artists.length - 2);
-    allSongs.add(row.name);
-    return row;
-}).then((loadedData) => {
+spotifyDataPromise.then((loadedData) => {
+    loadedData.forEach ((d) => {
+        d.popularity = d.popularity / 100;
+        d.artists = d.artists.substring(2, d.artists.length - 2);
+        allSongs.add(d.name);
+    });
+
     selectedSong = null; //loadedData[114381];
     if (selectedSong) {
         top5SimilarSongs = findTop5SimilarSongs(selectedSong, loadedData, attrs);

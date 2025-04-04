@@ -1,21 +1,24 @@
+import spotifyDataPromise from "./dataloading.js";
+
 let key_container = document.getElementById('key-vis');
 let keyChart_container = document.getElementById('keys-chart-container');
 let keySongs_container = d3.select('#keys-songs-container');
 
 let keySelected = 0;
 let keyMode = 1; // 0 = minor, 1 = major
+let start_new;
 
-d3.csv("data/spotify600k.csv", row => { 
-    row.trackID = row.id;
-    row.title = row.name;
-    row.artists = row.artists;
-    row.date = new Date(row.release_date);
-    row.key = +row.key;
-    row.mode = +row.mode;
-
-    return row;
-}).then(data => {
+spotifyDataPromise.then(data => {
     // Prepare the data
+    data.forEach(row => {
+        row.trackID = row.id;
+        row.title = row.name;
+        row.artists = row.artists;
+        row.date = new Date(row.release_date);
+        row.key = +row.key;
+        row.mode = +row.mode;
+    });
+
     // Group songs by year, mode, and key
     let yearKeyModeCount = {};
 
@@ -300,8 +303,9 @@ d3.csv("data/spotify600k.csv", row => {
                     d3.selectAll(".sharp" + key).attr("fill", "#1DB954");
                 }
                 
+                sessionStorage.setItem("keySelected", `${keyNotesPositions[key].note} ${keyMode ? 'Major' : 'Minor'}`);
                 keySelected = key;
-                sessionStorage.setItem("keySelected", `${keyNotesPositions[key].note} ${keyMode ? 'Major' : 'Minor'}`);                updateChart(key);
+                updateChart(key);
             })
             .on('mouseover', function(event, d) {
                 // Make the hovered note stem, line through head, head, and sharp bright green
@@ -445,6 +449,7 @@ d3.csv("data/spotify600k.csv", row => {
         keyMode = 0;
         minorKeyButton.classed('active', true);
         majorKeyButton.classed('active', false);
+        sessionStorage.setItem("keySelected", `${keyNotesPositions[keySelected].note} ${keyMode ? 'Major' : 'Minor'}`);
         updateChart(keySelected);
     });
 
@@ -452,6 +457,7 @@ d3.csv("data/spotify600k.csv", row => {
         keyMode = 1;
         majorKeyButton.classed('active', true);
         minorKeyButton.classed('active', false);
+        sessionStorage.setItem("keySelected", `${keyNotesPositions[keySelected].note} ${keyMode ? 'Major' : 'Minor'}`);
         updateChart(keySelected);
     });
 

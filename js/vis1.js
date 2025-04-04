@@ -50,7 +50,7 @@ let globeProjection;
 d3.select(".page-1")
     .append("p")
     .attr("id", "loading-message")
-    .text("Now Loading...");
+    .text("Now Loading... (This could take up to 1 minute)");
 
 Promise.all(years.map(year =>
     d3.csv(`data/spotifytop50_${year}.csv`, row => {
@@ -137,7 +137,7 @@ Promise.all(years.map(year =>
             globeSvg.selectAll('image').remove();
             globeSvg.selectAll('clipPath').remove();
 
-            // update header text
+            // update top text
             d3.select(".selected-country-and-year")
                 .text("Click on a country to find out more!");
         }

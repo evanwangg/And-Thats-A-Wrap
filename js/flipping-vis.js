@@ -58,7 +58,7 @@ function initVis(promises) {
 
         let xScale = d3.scaleLinear()
             .domain([1, 100])  // Popularity is between 0 and 100
-            .range([0, barChartWidth]);
+            .range([margins.left / 2, barChartWidth - margins.right]);
 
         let yScale = d3.scaleLinear()
             .domain([0, d3.max(combinedData, d => d.popularity)])
@@ -67,6 +67,12 @@ function initVis(promises) {
         let svg = svgArea.append("svg")
             .attr("width", barChartWidth)
             .attr("height", barChartHeight)
+
+            .style("display", "block")
+            .style("margin", "auto")
+            .style("position", "relative")
+            .style("top", "50%")
+            .style("transform", "translateY(-50%)");
 
         svg.append("rect")
             .attr("x", 0)
@@ -161,7 +167,7 @@ function initVis(promises) {
         // y title
         svg.append("text")
             .attr("class", "axis-title info-text")
-            .attr("x", -barChartHeight / 2)
+            .attr("x", -barChartHeight / 2.3)
             .attr("y", margins.left - 10)
             .attr("transform", "rotate(-90)")
             .attr("text-anchor", "middle")
