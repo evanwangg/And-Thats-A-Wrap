@@ -142,7 +142,7 @@ The repo is structured as:
 ### Our Team Page:
 -   Click on a member's profile picture to view that team member's cute avatar!
 -   Click through the Now Playing songs for each member.
--   Code files:
+-   Code files: 
     -   `js/team.js`: code for Our Team page
 
 ### Acknowledgements and Datasets Page:
